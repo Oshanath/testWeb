@@ -6,6 +6,9 @@ let requestController = require('./Public/requestController')
 app.use(express.static('./public'));
 app.use('/assets' , express.static('assets'));
 
+//form data body parser
+app.use(express.urlencoded({extended: true}))
+
 //fire up controllers
 requestController(app);
 
